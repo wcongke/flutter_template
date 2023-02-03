@@ -10,7 +10,6 @@ class CounterPage extends StatefulWidget {
 class _CounterPage extends State<CounterPage> {
   int _counter = 0;
 
-  // 计数递增
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -20,12 +19,12 @@ class _CounterPage extends State<CounterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('计数器')),
+      appBar: AppBar(title: const Text('Counter')),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Text('点击按钮计数'),
+          const Text('You have push the button this many times:'),
           Text('$_counter', style: Theme.of(context).textTheme.headlineLarge)
         ],
       )),

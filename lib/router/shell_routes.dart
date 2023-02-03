@@ -4,6 +4,7 @@ import 'package:flutter_template/router/fade_transition_page.dart';
 import 'package:flutter_template/pages/home.dart';
 import 'package:flutter_template/pages/counter.dart';
 import 'package:flutter_template/pages/common.dart';
+import 'package:flutter_template/pages/webview.dart';
 
 class AppShellRoutes {
   static final routes = [
@@ -23,7 +24,7 @@ class AppShellRoutes {
                   path: 'childPage/:pageId',
                   builder: (context, state) {
                     return CommonPage(
-                        title: '首页子页面',
+                        title: 'Home child page',
                         content: state.params['pageId'] as String);
                   },
                 ),
@@ -41,11 +42,19 @@ class AppShellRoutes {
               return FadeTransitionPage(
                   key: state.pageKey,
                   child: const CommonPage(
-                    title: '通用页面',
-                    content: '通用页面内容',
+                    title: 'Common',
+                    content: 'Common page',
                   ));
             },
           )
-        ])
+        ]),
+    GoRoute(
+      path: '/webview',
+      builder: (context, state) {
+        return WebviewPage(
+            title: 'WebView test',
+            fromPage: state.queryParams['fromPage'] as String);
+      },
+    )
   ];
 }

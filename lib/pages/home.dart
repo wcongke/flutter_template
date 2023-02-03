@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('首页')),
+      appBar: AppBar(title: const Text('Home')),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +15,10 @@ class HomePage extends StatelessWidget {
           const Text('hello World'),
           ElevatedButton(
               onPressed: () => context.go('/home/childPage/123'),
-              child: const Text('前往首页子页面'))
+              child: const Text('Go to home child page')),
+          ElevatedButton(
+              onPressed: () => context.go('/webview/?fromPage=/home'),
+              child: const Text('webview'))
         ],
       )),
     );

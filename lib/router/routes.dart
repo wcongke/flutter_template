@@ -20,7 +20,8 @@ class AppRoutes {
           GoRoute(
             path: 'common',
             builder: (context, state) {
-              return const CommonPage(title: '通用页面', content: '通用页面');
+              return const CommonPage(
+                  title: 'Common', content: 'Common Content');
             },
           )
         ])

@@ -15,16 +15,16 @@ class BottomNavBarShell extends StatelessWidget {
       body: child,
       bottomNavigationBar: BottomNavigationBar(
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: '首页'),
-            BottomNavigationBarItem(icon: Icon(Icons.calculate), label: '计数器'),
-            BottomNavigationBarItem(icon: Icon(Icons.pages), label: '通用页面'),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.calculate), label: 'Counter'),
+            BottomNavigationBarItem(icon: Icon(Icons.pages), label: 'Common'),
           ],
           currentIndex: _calculateSelectedIndex(context),
           onTap: (idx) => _onItemTapped(idx, context)),
     );
   }
 
-  // 计算当前菜单索引
   static int _calculateSelectedIndex(BuildContext context) {
     final route = GoRouter.of(context);
     final location = route.location;
@@ -38,7 +38,6 @@ class BottomNavBarShell extends StatelessWidget {
     }
   }
 
-  // 点击菜单
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
       case 1:
