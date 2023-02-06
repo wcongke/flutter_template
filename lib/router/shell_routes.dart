@@ -53,6 +53,7 @@ class AppShellRoutes {
       builder: (context, state) {
         return WebviewPage(
             title: 'WebView test',
+            url: 'https://bing.com',
             fromPage: state.queryParams['fromPage'] as String);
       },
     )
