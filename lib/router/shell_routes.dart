@@ -4,7 +4,7 @@ import 'package:flutter_template/router/fade_transition_page.dart';
 import 'package:flutter_template/pages/home.dart';
 import 'package:flutter_template/pages/counter.dart';
 import 'package:flutter_template/pages/common.dart';
-import 'package:flutter_template/pages/webview.dart';
+import 'package:flutter_template/pages/webview/webview.dart';
 
 class AppShellRoutes {
   static final routes = [

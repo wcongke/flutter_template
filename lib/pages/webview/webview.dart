@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_template/pages/webview/popup_menu.dart';
 
 class WebviewPage extends StatefulWidget {
   const WebviewPage(
@@ -106,26 +107,7 @@ class _WebviewPage extends State<WebviewPage> {
                   controller.reload();
                 },
                 icon: const Icon(Icons.replay)),
-            PopupMenuButton(
-                onSelected: (value) async {
-                  switch (value) {
-                    case 'userAgent':
-                      final userAgent = await controller
-                          .runJavaScriptReturningResult('navigator.userAgent');
-                      if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text(userAgent.toString())));
-                      }
-
-                      break;
-                    default:
-                      break;
-                  }
-                },
-                itemBuilder: (context) => [
-                      const PopupMenuItem(
-                          value: 'userAgent', child: Text('Show user-agent')),
-                    ])
+            PopupMenu(controller: controller),
           ],
         ),
         body: WebViewWidget(controller: controller));
